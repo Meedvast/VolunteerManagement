@@ -37,7 +37,7 @@ struct volunteer{
     struct Will;//个人意愿，前场还是后勤，是否服从调剂等
     struct volunteer* next;
 };
-//插入节点
+/*//插入节点?
 void Insert(struct volunteer* head,struct volunteer* newnode)
 {
     struct volunteer* p=head;
@@ -47,7 +47,7 @@ void Insert(struct volunteer* head,struct volunteer* newnode)
     }
     p->next=newnode;
 }
-//删除节点
+//删除节点?
 void Delete(struct volunteer* head,struct volunteer* newnode)
 {
     struct volunteer* p=head;
@@ -56,23 +56,34 @@ void Delete(struct volunteer* head,struct volunteer* newnode)
         p=p->next;
     }
     p->next=newnode->next;
-}
-//查找节点
-struct volunteer* Search(struct volunteer* head,char* name)
+}*/
+//查找节点,可以实现按姓名查找/身份证号查找/按电话号码查找
+struct volunteer* Search(struct volunteer* head,char* p1)
 {
     struct volunteer* p=head;
+    int Size=sizeof (*p);
     while(p->next!=NULL)
     {
-        if(strcmp(p->name,name)==0)
-        {
-            return p;
+        switch (Size) {
+            case sizeof(int):
+                if(strcmp(p->number,p1)==0 || strcmp(p->ID,p1)==0)
+                {
+                    return p;
+                }
+                break;
+            case sizeof(char):
+                if(strcmp(p->name,p1)==0)
+                {
+                    return p;
+                }
+                break;
         }
         p=p->next;
     }
     return NULL;
 }
 //修改节点
-void Modify(struct volunteer* head,struct volunteer* newnode)
+/*void Modify(struct volunteer* head,struct volunteer* newnode)
 {
     struct volunteer* p=head;
     while(p->next!=newnode)
@@ -80,8 +91,8 @@ void Modify(struct volunteer* head,struct volunteer* newnode)
         p=p->next;
     }
     p->next=newnode->next;
-}
-void writeExcel()
+}*/
+void WriteExcel()
 {
     char chy[4]={ 'x' ,'a' ,'h','w' } ;
     int data[4]={ 1 , 3 , 6 ,9	};
@@ -161,7 +172,6 @@ int main() {
     return 0;
 }
 
-
 int Menu(void)
 {
     int posy=13;
@@ -236,6 +246,41 @@ void VolunteerInfo()
     }
     system("cls");
 }
+    void Register()
+    {
+        int op;
+        char ese;
+        printf("按下ESE键以返回上一界面...\n");
+        if(_kbhit())
+        {
+            ese=getch();
+            if(ese!=27)
+            {
+                printf("新的志愿者信息登记表 ：");
+                //读入新文件
+
+            }
+        }
+        system("cls");
+    }
+
+    void Modify()
+    {
+        int op;
+        char ese;
+        printf("按下ESE键以返回上一界面...\n");
+        if(_kbhit())
+        {
+            ese=getch();
+            if(ese!=27)
+            {
+                printf("新的志愿者信息登记表 ：");
+                //读入新文件
+
+            }
+        }
+        system("cls");
+    }
     void Register()
     {
         int op;
