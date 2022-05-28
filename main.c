@@ -35,7 +35,52 @@ struct volunteer{
     int servicetime;//提供服务的时间，0表示早上，1表示下午，2表示晚上。
     struct Skills;//个人特长
     struct Will;//个人意愿，前场还是后勤，是否服从调剂等
+    struct volunteer* next;
 };
+//插入节点
+void Insert(struct volunteer* head,struct volunteer* newnode)
+{
+    struct volunteer* p=head;
+    while(p->next!=NULL)
+    {
+        p=p->next;
+    }
+    p->next=newnode;
+}
+//删除节点
+void Delete(struct volunteer* head,struct volunteer* newnode)
+{
+    struct volunteer* p=head;
+    while(p->next!=newnode)
+    {
+        p=p->next;
+    }
+    p->next=newnode->next;
+}
+//查找节点
+struct volunteer* Search(struct volunteer* head,char* name)
+{
+    struct volunteer* p=head;
+    while(p->next!=NULL)
+    {
+        if(strcmp(p->name,name)==0)
+        {
+            return p;
+        }
+        p=p->next;
+    }
+    return NULL;
+}
+//修改节点
+void Modify(struct volunteer* head,struct volunteer* newnode)
+{
+    struct volunteer* p=head;
+    while(p->next!=newnode)
+    {
+        p=p->next;
+    }
+    p->next=newnode->next;
+}
 void writeExcel()
 {
     char chy[4]={ 'x' ,'a' ,'h','w' } ;
