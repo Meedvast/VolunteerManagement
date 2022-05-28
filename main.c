@@ -191,10 +191,37 @@ void VolunteerInfo()
     }
     system("cls");
 }
-void Register()
-{
-    printf("按下ESE键以返回上一界面...");
-}
-void Modify(){
+    void Register()
+    {
+        int op;
+        char ese;
+        printf("按下ESE键以返回上一界面...\n");
+        if(_kbhit())
+        {
+            ese=getch();
+            if(ese!=27)
+            {
+                printf("新的志愿者信息登记表 ：");
+                //读入新文件
 
-}
+            }
+        }
+        system("cls");
+    }
+    void Modify()
+    {
+        int op;
+        char ese;
+        printf("按下ESE键以返回上一界面...\n");
+        if(_kbhit())
+        {
+            ese=getch();
+            if(ese!=27)
+            {
+                printf("新的志愿者信息登记表 ：");
+                //读入新文件
+
+            }
+        }
+        system("cls");
+    }
