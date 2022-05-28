@@ -12,6 +12,61 @@ void SetPosition(int x,int y);
 void VolunteerInfo();
 void Register();
 void Modify();
+struct Will
+{
+    int Work;//前场还是后勤
+    int Adjustice;//是否服从调剂
+};
+struct Skills
+{
+    int Interpersonal;//交际能力得分,评分由1-5分为5档
+    int Exe;//行动能力得分,评分由1-5分为5档
+    int Capacity;//管理能力得分,评分由1-5分为5档
+};
+struct volunteer{
+    char* name;
+    int gender;
+    int age;
+    char number[11];//电话号
+    char ID[18];//身份证号
+    char* workplace;
+    int LanguageAbility;//掌握外语种类与熟练程度,评分由1-5分为5档
+    int experience;//志愿服务经历，0表示从未，1表示有1-3次服务经历，2表示3次以上
+    int servicetime;//提供服务的时间，0表示早上，1表示下午，2表示晚上。
+    struct Skills;//个人特长
+    struct Will;//个人意愿，前场还是后勤，是否服从调剂等
+};
+void writeExcel()
+{
+    char chy[4]={ 'x' ,'a' ,'h','w' } ;
+    int data[4]={ 1 , 3 , 6 ,9	};
+    int i ;
+    FILE *fp = NULL ;
+    fp = fopen("test.xls","w") ;
+    for (i=0 ; i<4 ;i++)
+        fprintf(fp,"%c\t%d\n",chy[i],data[i] ) ;
+    fclose(fp);
+}
+
+void ReadExcel()
+{
+    FILE *fp;
+    char filename[40]  ;
+    int i,j ;
+    float da[6][5] = {0} ;
+    printf(" 输入文件名: ");
+    gets(filename);
+    fp=fopen(filename,"r");     // fp指针指向文件头部
+    for(i = 0 ;i < 6 ; i++)
+        for(j = 0 ;j < 5 ; j++)
+        {
+            fscanf(fp,"%f",&da[i][j]);
+            fseek(fp, 1L, SEEK_CUR);   /*fp指针从当前位置向后移动*/
+        }
+
+    for(i = 0 ;i < 6 ; i++)
+        printf("%f\t%f\t%f\t%f\t%f\t\n",da[i][0],da[i][1],da[i][2],da[i][3],da[i][4]);
+}
 
 int main() {
     char ch;
@@ -119,7 +174,8 @@ void VolunteerInfo()
 {
     //读取文件的函数
     int op;
-    while()
+    while(){
+
         printf("需要进行的操作是 登记1/修改2 ：[  ]\b\b\b");
     scanf("%d",op);
 
@@ -139,4 +195,6 @@ void Register()
 {
     printf("按下ESE键以返回上一界面...");
 }
-void Modify()
+void Modify(){
+
+}
