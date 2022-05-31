@@ -34,8 +34,15 @@ typedef struct Volunteer{
     Will will;//个人意愿，前场还是后勤，是否服从调剂等
     struct Volunteer* next;
 }Volunteer;
-
+typedef struct Competition{
+    int id;
+    char* name;
+    char* time;
+    char* place;
+    char* type;
+}Competition;
 Volunteer *volunteer;
+Competition competition[20];
 void WriteExcel();
 void ReadExcel(char *filename);
 int Menu(void);//主界面菜单
@@ -48,7 +55,6 @@ void CompetitionInfo();
 void CheckC();
 void Arrangement();
 void Statistic();
-
 int main() {
     char ch;
     system("mode con cols=130 lines=60");
@@ -365,7 +371,24 @@ void CompetitionInfo()
 }
 void CheckC()
 {
-
+    //查看比赛信息
+    int op;
+    char ese;
+    printf("按下ESE键以返回上一界面...\n");
+    if(_kbhit()) {
+        ese = getch();
+        if (ese != 27) {
+            while (op!=0){
+                printf("请输入需要查看的比赛编号：");
+                scanf("%d", &op);
+                printf("比赛名称：%s\n", competition[op].name);
+                printf("比赛时间：%s\n", competition[op].time);
+                printf("比赛地点：%s\n", competition[op].place);
+                printf("比赛类型：%s\n", competition[op].type);
+            }
+        }
+    }
+    system("cls");
 }
 void Arrangement()
 {
