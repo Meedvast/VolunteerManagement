@@ -1,3 +1,3 @@
-C:/Users/hasee/CLionProjects/VolunteerMangement/cmake-build-debug/CMakeFiles/VolunteerMangement.dir
-C:/Users/hasee/CLionProjects/VolunteerMangement/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/hasee/CLionProjects/VolunteerMangement/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/CLionProjects/VolunteerManagement/cmake-build-debug/CMakeFiles/VolunteerManagement.dir
+D:/CLionProjects/VolunteerManagement/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/CLionProjects/VolunteerManagement/cmake-build-debug/CMakeFiles/rebuild_cache.dir

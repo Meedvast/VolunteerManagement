@@ -11,27 +11,27 @@
 
 typedef struct Will
 {
-    int Work;//å‰åœºè¿˜æ˜¯åå‹¤
-    int Adjustice;//æ˜¯å¦æœä»è°ƒå‰‚
+    int Work;//Ç°³¡»¹ÊÇºóÇÚ
+    int Adjustice;//ÊÇ·ñ·ş´Óµ÷¼Á
 }Will;
 typedef struct Skills
 {
-    int Interpersonal;//äº¤é™…èƒ½åŠ›å¾—åˆ†,è¯„åˆ†ç”±1-5åˆ†ä¸º5æ¡£
-    int Exe;//è¡ŒåŠ¨èƒ½åŠ›å¾—åˆ†,è¯„åˆ†ç”±1-5åˆ†ä¸º5æ¡£
-    int Capacity;//ç®¡ç†èƒ½åŠ›å¾—åˆ†,è¯„åˆ†ç”±1-5åˆ†ä¸º5æ¡£
+    int Interpersonal;//½»¼ÊÄÜÁ¦µÃ·Ö,ÆÀ·ÖÓÉ1-5·ÖÎª5µµ
+    int Exe;//ĞĞ¶¯ÄÜÁ¦µÃ·Ö,ÆÀ·ÖÓÉ1-5·ÖÎª5µµ
+    int Capacity;//¹ÜÀíÄÜÁ¦µÃ·Ö,ÆÀ·ÖÓÉ1-5·ÖÎª5µµ
 }Skills;
 typedef struct Volunteer{
     char* name;
     int gender;
     int age;
-    char number[11];//ç”µè¯å·
-    char ID[18];//èº«ä»½è¯å·
+    char number[11];//µç»°ºÅ
+    char ID[18];//Éí·İÖ¤ºÅ
     char* workplace;
-    int LanguageAbility;//æŒæ¡å¤–è¯­ç§ç±»ä¸ç†Ÿç»ƒç¨‹åº¦,è¯„åˆ†ç”±1-5åˆ†ä¸º5æ¡£,æˆ‘ä»¬å‡å®šä»…ä»¥è‹±è¯­ä¸ºä¾‹
-    int experience;//å¿—æ„¿æœåŠ¡ç»å†ï¼Œ0è¡¨ç¤ºä»æœªï¼Œ1è¡¨ç¤ºæœ‰1-3æ¬¡æœåŠ¡ç»å†ï¼Œ2è¡¨ç¤º3æ¬¡ä»¥ä¸Š
-    int servicetime;//æä¾›æœåŠ¡çš„æ—¶é—´ï¼Œ0è¡¨ç¤ºæ—©ä¸Šï¼Œ1è¡¨ç¤ºä¸‹åˆï¼Œ2è¡¨ç¤ºæ™šä¸Šã€‚
-    Skills skills;//ä¸ªäººç‰¹é•¿
-    Will will;//ä¸ªäººæ„æ„¿ï¼Œå‰åœºè¿˜æ˜¯åå‹¤ï¼Œæ˜¯å¦æœä»è°ƒå‰‚ç­‰
+    int LanguageAbility;//ÕÆÎÕÍâÓïÖÖÀàÓëÊìÁ·³Ì¶È,ÆÀ·ÖÓÉ1-5·ÖÎª5µµ,ÎÒÃÇ¼Ù¶¨½öÒÔÓ¢ÓïÎªÀı
+    int experience;//Ö¾Ô¸·şÎñ¾­Àú£¬0±íÊ¾´ÓÎ´£¬1±íÊ¾ÓĞ1-3´Î·şÎñ¾­Àú£¬2±íÊ¾3´ÎÒÔÉÏ
+    int servicetime;//Ìá¹©·şÎñµÄÊ±¼ä£¬0±íÊ¾ÔçÉÏ£¬1±íÊ¾ÏÂÎç£¬2±íÊ¾ÍíÉÏ¡£
+    Skills skills;//¸öÈËÌØ³¤
+    Will will;//¸öÈËÒâÔ¸£¬Ç°³¡»¹ÊÇºóÇÚ£¬ÊÇ·ñ·ş´Óµ÷¼ÁµÈ
     struct Volunteer* next;
 }Volunteer;
 typedef struct Competition{
@@ -45,7 +45,7 @@ Volunteer *volunteer;
 Competition competition[20];
 void WriteExcel();
 void ReadExcel(char *filename);
-int Menu(void);//ä¸»ç•Œé¢èœå•
+int Menu(void);//Ö÷½çÃæ²Ëµ¥
 void SetPosition(int x,int y);
 void pInfo();
 void Register();
@@ -111,40 +111,40 @@ int Menu(void)
     SetPosition(POS_X3,posy);
     printf("\t\t    ********************************************************\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t    *               æ­å·äºšè¿ä¼šå¿—æ„¿è€…ç®¡ç†ç³»ç»Ÿ               *\n");
+    printf("\t\t    *               º¼ÖİÑÇÔË»áÖ¾Ô¸Õß¹ÜÀíÏµÍ³               *\n");
     SetPosition(POS_X3,++posy);
     printf("\t\t    ********************************************************\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+    printf("\t\t   ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                   1. ç™»è®°å¿—æ„¿è€…ä¿¡æ¯                   â”‚\n");
+    printf("\t\t   ©¦                   1. µÇ¼ÇÖ¾Ô¸ÕßĞÅÏ¢                   ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                    2. æ¯”èµ›ç›¸å…³ä¿¡æ¯                    â”‚\n");
+    printf("\t\t   ©¦                    2. ±ÈÈüÏà¹ØĞÅÏ¢                    ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                    3. å¿—æ„¿æœåŠ¡ç»Ÿè®¡                    â”‚\n");
+    printf("\t\t   ©¦                    3. Ö¾Ô¸·şÎñÍ³¼Æ                    ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â”‚                                                       â”‚\n");
+    printf("\t\t   ©¦                                                       ©¦\n");
     SetPosition(POS_X3,++posy);
-    printf("\t\t   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+    printf("\t\t   ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n");
     SetPosition(POS_X3,++posy);
 
-    printf("\t\t   è¯·é€‰æ‹©ä½ æƒ³è¦è¿›è¡Œçš„æ“ä½œ[0~3]:[  ]\b\b\b");
+    printf("\t\t   ÇëÑ¡ÔñÄãÏëÒª½øĞĞµÄ²Ù×÷[0~3]:[  ]\b\b\b");
     scanf("%d",option);
     return option;
 }
@@ -172,12 +172,12 @@ void WriteExcel()
 void ReadExcel(char *filename)
 {
     FILE *fp;
-    fp=fopen(filename,"r");     // fpæŒ‡é’ˆæŒ‡å‘æ–‡ä»¶å¤´éƒ¨
+    fp=fopen(filename,"r");     // fpÖ¸ÕëÖ¸ÏòÎÄ¼şÍ·²¿
     while (!feof(fp))
     {
         Volunteer *p= (Volunteer *)malloc(sizeof(Volunteer));
         fscanf(fp,"%f",p->name);
-        fseek(fp, 1L, SEEK_CUR);   /*fpæŒ‡é’ˆä»å½“å‰ä½ç½®å‘åç§»åŠ¨*/
+        fseek(fp, 1L, SEEK_CUR);   /*fpÖ¸Õë´Óµ±Ç°Î»ÖÃÏòºóÒÆ¶¯*/
         fscanf(fp,"%d",p->gender);
         fseek(fp, 1L, SEEK_CUR);
         fscanf(fp,"%d",p->age);
@@ -208,22 +208,22 @@ void ReadExcel(char *filename)
         volunteer=p;
     }
     fclose(fp);
-}//è¿˜éœ€åšä¸€ä¸ªè¯»å–æ¯”èµ›ç›¸å…³ä¿¡æ¯çš„å‡½æ•°
+}//»¹Ğè×öÒ»¸ö¶ÁÈ¡±ÈÈüÏà¹ØĞÅÏ¢µÄº¯Êı
 void VolunteerInfo()
 {
     int op;
     char ese;
     char* filename;
-    printf("æŒ‰ä¸‹ESEé”®ä»¥è¿”å›ä¸Šä¸€ç•Œé¢...\n");
+    printf("°´ÏÂESE¼üÒÔ·µ»ØÉÏÒ»½çÃæ...\n");
     if(_kbhit())
     {
         ese=getch();
         if(ese!=27)
         {
-            printf("è¯·è¾“å…¥å¿—æ„¿è€…ç›¸å…³ä¿¡æ¯çš„æ–‡ä»¶åï¼š");
+            printf("ÇëÊäÈëÖ¾Ô¸ÕßÏà¹ØĞÅÏ¢µÄÎÄ¼şÃû£º");
             scanf("%s",filename);
-            ReadExcel(filename);//è¯»å–æ–‡ä»¶çš„å‡½æ•°
-            printf("éœ€è¦è¿›è¡Œçš„æ“ä½œæ˜¯ ç™»è®°1/ä¿®æ”¹2 ï¼š[  ]\b\b\b");
+            ReadExcel(filename);//¶ÁÈ¡ÎÄ¼şµÄº¯Êı
+            printf("ĞèÒª½øĞĞµÄ²Ù×÷ÊÇ µÇ¼Ç1/ĞŞ¸Ä2 £º[  ]\b\b\b");
             scanf("%d",op);
             switch (op) {
                 case 1:
@@ -241,13 +241,13 @@ void Register()
 {
     char ese;
     char* filename;
-    printf("æŒ‰ä¸‹ESEé”®ä»¥è¿”å›ä¸Šä¸€ç•Œé¢...\n");
+    printf("°´ÏÂESE¼üÒÔ·µ»ØÉÏÒ»½çÃæ...\n");
     if(_kbhit())
     {
         ese=getch();
         if(ese!=27)
         {
-            printf("æ–°çš„å¿—æ„¿è€…ä¿¡æ¯ç™»è®°è¡¨ ï¼š");
+            printf("ĞÂµÄÖ¾Ô¸ÕßĞÅÏ¢µÇ¼Ç±í £º");
             scanf("%s",filename);
             ReadExcel(filename);
         }
@@ -261,7 +261,7 @@ void Modify()
     char* check;
     char* modify1;
     int modify2;
-    printf("æŒ‰ä¸‹ESEé”®ä»¥è¿”å›ä¸Šä¸€ç•Œé¢...\n");
+    printf("°´ÏÂESE¼üÒÔ·µ»ØÉÏÒ»½çÃæ...\n");
     if(_kbhit())
     {
         ese=getch();
@@ -269,14 +269,14 @@ void Modify()
         {
             while(1)
             {
-                printf("è¯·è¾“å…¥éœ€è¦ä¿®æ”¹ä¿¡æ¯çš„å¿—æ„¿è€…çš„ å§“å/æ‰‹æœºå·/èº«ä»½è¯å·(0é€€å‡ºï¼‰ï¼š");
+                printf("ÇëÊäÈëĞèÒªĞŞ¸ÄĞÅÏ¢µÄÖ¾Ô¸ÕßµÄ ĞÕÃû/ÊÖ»úºÅ/Éí·İÖ¤ºÅ(0ÍË³ö£©£º");
                 scanf("%s",check);
                 if(check=='0')
                     break;
-                //æŸ¥æ‰¾å‡½æ•°,è¿”å›å¯¹åº”é“¾è¡¨ä½ç½®
+                //²éÕÒº¯Êı,·µ»Ø¶ÔÓ¦Á´±íÎ»ÖÃ
                 while(op!=0)
                 {
-                    printf("è¯·è¾“å…¥éœ€è¦ä¿®æ”¹çš„æ•°æ®ç¼–å·ä¸ä¿®æ”¹åçš„å€¼(0é€€å‡ºï¼‰ï¼š");
+                    printf("ÇëÊäÈëĞèÒªĞŞ¸ÄµÄÊı¾İ±àºÅÓëĞŞ¸ÄºóµÄÖµ(0ÍË³ö£©£º");
                     scanf("%d",&op);
                     switch (op) {
                         case 0:
@@ -346,45 +346,108 @@ void Modify()
     }
     system("cls");
 }
-void CompetitionInfo()
+void CheckS()
 {
-    //è¯»å–æ–‡ä»¶çš„å‡½æ•°
     int op;
     char ese;
-    printf("æŒ‰ä¸‹ESEé”®ä»¥è¿”å›ä¸Šä¸€ç•Œé¢...\n");
+    printf("°´ÏÂESE¼üÒÔ·µ»ØÉÏÒ»½çÃæ...\n");
+    char* Get;
     if(_kbhit())
     {
         ese=getch();
         if(ese!=27)
         {
-            printf("æ˜¯å¦éœ€è¦æŸ¥çœ‹æ¯”èµ›ä¿¡æ¯ éœ€è¦1/ä¸éœ€è¦0 ï¼š[  ]\b\b\b");
+            while(op!=0)
+            {
+                printf("ĞèÒª²é¿´ĞÅÏ¢µÄÖ¾Ô¸Õß£¨¸ù¾İĞÕÃû1/Éí·İÖ¤ºÅÂë2/µç»°ºÅÂë3£©£º[  ]\b\b\b");
+                scanf("%d",op);
+                Volunteer *p=volunteer;
+                switch (op) {
+                    case 1:
+                        printf("ÇëÊäÈëÒª²éÑ¯µÄÖ¾Ô¸ÕßµÄĞÕÃû£º");
+                        scanf("%s",Get);
+
+                        while(p->next!=NULL)
+                        {
+                            if(p->name==Get)
+                            {
+                                printf("²éÑ¯µ½µÄÖ¾Ô¸ÕßµÄĞÅÏ¢Îª£º%s\t%d\t%d\t%s\t%s\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n",p->name,p->gender,p->age,p->number,p->ID,p->workplace,p->LanguageAbility,p->experience,p->servicetime,p->skills.Interpersonal,p->skills.Exe,p->skills.Capacity,p->will.Work,p->will.Adjustice) ;
+                                break;
+                            }
+                            p=p->next;
+                        }
+                        break;
+                    case 2:
+                        printf("ÇëÊäÈëÒª²éÑ¯µÄÖ¾Ô¸ÕßµÄÉí·İÖ¤ºÅÂë£º");
+                        scanf("%s",Get);
+                        while(p->next!=NULL)
+                        {
+                            if(p->ID==Get)
+                            {
+                                printf("²éÑ¯µ½µÄÖ¾Ô¸ÕßµÄĞÅÏ¢Îª£º%s\t%d\t%d\t%s\t%s\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n",p->name,p->gender,p->age,p->number,p->ID,p->workplace,p->LanguageAbility,p->experience,p->servicetime,p->skills.Interpersonal,p->skills.Exe,p->skills.Capacity,p->will.Work,p->will.Adjustice) ;
+                                break;
+                            }
+                            p=p->next;
+                        }
+                        break;
+                    case 3:
+                        printf("ÇëÊäÈëÒª²éÑ¯µÄÖ¾Ô¸ÕßµÄµç»°ºÅÂë£º");
+                        scanf("%s",Get);
+                        while(p->next!=NULL)
+                        {
+                            if(p->number==Get)
+                            {
+                                printf("²éÑ¯µ½µÄÖ¾Ô¸ÕßµÄĞÅÏ¢Îª£º%s\t%d\t%d\t%s\t%s\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n",p->name,p->gender,p->age,p->number,p->ID,p->workplace,p->LanguageAbility,p->experience,p->servicetime,p->skills.Interpersonal,p->skills.Exe,p->skills.Capacity,p->will.Work,p->will.Adjustice) ;
+                                break;
+                            }
+                            p=p->next;
+                        }
+                        break;
+                }
+            }
+        }
+    }
+    system("cls");
+}
+void CompetitionInfo()
+{
+    //¶ÁÈ¡ÎÄ¼şµÄº¯Êı
+    int op;
+    char ese;
+    printf("°´ÏÂESE¼üÒÔ·µ»ØÉÏÒ»½çÃæ...\n");
+    if(_kbhit())
+    {
+        ese=getch();
+        if(ese!=27)
+        {
+            printf("ÊÇ·ñĞèÒª²é¿´±ÈÈüĞÅÏ¢ ĞèÒª1/²»ĞèÒª0 £º[  ]\b\b\b");
             scanf("%d",op);
             switch (op) {
                 case 1:
                     CheckC();
                     break;
             }
-            //ç³»ç»Ÿè‡ªåŠ¨è¿›è¡ŒåŒ¹é…
+            //ÏµÍ³×Ô¶¯½øĞĞÆ¥Åä
         }
     }
     system("cls");
 }
 void CheckC()
 {
-    //æŸ¥çœ‹æ¯”èµ›ä¿¡æ¯
+    //²é¿´±ÈÈüĞÅÏ¢
     int op;
     char ese;
-    printf("æŒ‰ä¸‹ESEé”®ä»¥è¿”å›ä¸Šä¸€ç•Œé¢...\n");
+    printf("°´ÏÂESE¼üÒÔ·µ»ØÉÏÒ»½çÃæ...\n");
     if(_kbhit()) {
         ese = getch();
         if (ese != 27) {
             while (op!=0){
-                printf("è¯·è¾“å…¥éœ€è¦æŸ¥çœ‹çš„æ¯”èµ›ç¼–å·ï¼š");
+                printf("ÇëÊäÈëĞèÒª²é¿´µÄ±ÈÈü±àºÅ£º");
                 scanf("%d", &op);
-                printf("æ¯”èµ›åç§°ï¼š%s\n", competition[op].name);
-                printf("æ¯”èµ›æ—¶é—´ï¼š%s\n", competition[op].time);
-                printf("æ¯”èµ›åœ°ç‚¹ï¼š%s\n", competition[op].place);
-                printf("æ¯”èµ›ç±»å‹ï¼š%s\n", competition[op].type);
+                printf("±ÈÈüÃû³Æ£º%s\n", competition[op].name);
+                printf("±ÈÈüÊ±¼ä£º%s\n", competition[op].time);
+                printf("±ÈÈüµØµã£º%s\n", competition[op].place);
+                printf("±ÈÈüÀàĞÍ£º%s\n", competition[op].type);
             }
         }
     }
@@ -398,7 +461,7 @@ void Statistic()
 {
     int op;
     char ese;
-    printf("æŒ‰ä¸‹ESEé”®ä»¥è¿”å›ä¸Šä¸€ç•Œé¢...\n");
+    printf("°´ÏÂESE¼üÒÔ·µ»ØÉÏÒ»½çÃæ...\n");
     if(_kbhit())
     {
         ese=getch();
@@ -406,8 +469,8 @@ void Statistic()
         {
             while(1)
             {
-                printf("è¯·é€‰æ‹©æŸ¥çœ‹ç»Ÿè®¡æ•°æ®çš„æ–¹å¼ï¼š");
-                scanf("%d",&op);//èƒ½å¤ŸæŒ‰æ¯”èµ›ã€æŒ‰å¿—æ„¿è€…ä¸ªä½“ã€æŒ‰å¿—æ„¿è€…çš„å¹´é¾„æ®µç­‰å¤šä¸ªç»´åº¦æ¥ç»Ÿè®¡å¿—æ„¿æœåŠ¡æ•°æ®,?
+                printf("ÇëÑ¡Ôñ²é¿´Í³¼ÆÊı¾İµÄ·½Ê½£º");
+                scanf("%d",&op);//ÄÜ¹»°´±ÈÈü¡¢°´Ö¾Ô¸Õß¸öÌå¡¢°´Ö¾Ô¸ÕßµÄÄêÁä¶ÎµÈ¶à¸öÎ¬¶ÈÀ´Í³¼ÆÖ¾Ô¸·şÎñÊı¾İ,?
                 switch (op) {
 
                 }
