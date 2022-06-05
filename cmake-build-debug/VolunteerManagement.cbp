@@ -24,6 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="D:/mysql-8.0.29-winx64/include"/>
 					<Add directory="C:/Users/Meedvast/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
 					<Add directory="C:/Users/Meedvast/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
 					<Add directory="C:/Users/Meedvast/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
@@ -43,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="D:/mysql-8.0.29-winx64/include"/>
 					<Add directory="C:/Users/Meedvast/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
 					<Add directory="C:/Users/Meedvast/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
 					<Add directory="C:/Users/Meedvast/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>

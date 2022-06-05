@@ -4,7 +4,7 @@
 # compile C with C:/Users/Meedvast/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/mingw/bin/gcc.exe
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = @CMakeFiles/VolunteerManagement.dir/includes_C.rsp
 
 C_FLAGS = -g -std=gnu99
 
