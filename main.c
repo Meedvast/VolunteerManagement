@@ -648,7 +648,7 @@ void Arrange(MYSQL *mysql)//自动进行志愿者与比赛匹配,要求：SELECT MAX(student_na
     }//第一次分配,分配不接受调剂的志愿者,按照志愿者意愿
     mysql_free_result(res);
 
-    sprintf(sql,"select v_id,LanguageAbility,experience,serviceTime,work,adjustice,ability from volunteer where adjustice=1 order by ability,v_id;");//重置
+    sprintf(sql,"select v_id,LanguageAbility,experience,serviceTime,work,adjustice,ability from volunteer where adjustice=1 order by ability,v_id limit 5,48;");//重置
     rc = mysql_real_query(mysql, sql, strlen(sql));
     if (0 != rc) {
         printf("mysql_real_query(): %s\n", mysql_error(mysql));
